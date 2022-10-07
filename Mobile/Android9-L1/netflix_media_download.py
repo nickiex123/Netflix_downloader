@@ -115,7 +115,7 @@ def onGenericDecrypt(message, data):
         except:
             pass
     
-attach_process = 'android.hardware.drm@1.3-service.widevine'
+attach_process = 'android.hardware.drm@1.1-service.widevine'
 
 device = frida.get_usb_device(timeout=10)
 session = device.attach(attach_process)

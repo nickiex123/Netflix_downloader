@@ -40,7 +40,7 @@ def video_download(data):
     global random_str
     data=data['video_tracks'][0]
     data=data['streams']
-    data=data[len(data)-5]
+    data=data[len(data)-4]
     data=data['urls'][0]
     url=data['url']
     print(url)
@@ -59,7 +59,7 @@ def audio_download(data):
     global random_str
     data=data['audio_tracks'][0]
     data=data['streams']
-    data=data[len(data)-5]
+    data=data[len(data)-1]
     data=data['urls'][0]
     url=data['url']
     print("[*] start audio download now!")
@@ -77,7 +77,7 @@ def text_download(data):
     global random_str
     data=data['timedtexttracks'][0]
     data=data['ttDownloadables']
-    data=data['nflx-cmisc']
+    data=data['simplesdh']
     data=data['urls'][0]
     url=data['url']
     print("[*] start text download now!")

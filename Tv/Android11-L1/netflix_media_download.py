@@ -44,7 +44,6 @@ def video_download(data):
     data=data[len(data)-4]
     data=data['urls'][0]
     url=data['url']
-    print(url)
     print("[*] start video download now!")
     filename=random_str+"_video"+".avi"
     with open(filename, 'wb') as f:
@@ -78,7 +77,7 @@ def text_download(data):
     global random_str
     data=data['timedtexttracks'][0]
     data=data['ttDownloadables']
-    data=data['nflx-cmisc']
+    data=data['simplesdh']
     data=data['urls'][0]
     url=data['url']
     print("[*] start text download now!")

@@ -114,8 +114,8 @@ def onGenericDecrypt(message, data):
             print()
         except:
             pass
-
-attach_process = 'android.hardware.drm@1.5-service.widevine'
+        
+attach_process = 'android.hardware.drm-service.widevine'
 
 device = frida.get_usb_device(timeout=10)
 session = device.attach(attach_process)
@@ -125,7 +125,7 @@ print("[+] Attached to " + attach_process)
 print("[+] Processing script _oecc25")
 
 genericDecrypt_data = """
-Interceptor.attach(Module.getExportByName('libwvhidl.so', '_oecc25'), {
+Interceptor.attach(Module.getExportByName('libwvaidl.so', '_oecc25'), {
     onEnter: function (args) {
         this.plaintext = args[5];
         this.len = args[2].toInt32();
