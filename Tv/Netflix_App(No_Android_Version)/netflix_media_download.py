@@ -43,7 +43,6 @@ def video_download(data):
     data=data[len(data)-4]
     data=data['urls'][0]
     url=data['url']
-    print(url)
     print("[*] start video download now!")
     filename=random_str+"_video"+".avi"
     with open(filename, 'wb') as f:
